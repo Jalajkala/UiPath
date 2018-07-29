@@ -1,0 +1,14 @@
+{
+  "name": "UiPathSelfStudy",
+  "description": "Project for developing understanding and usability of UiPath",
+  "main": "Main.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "18.2",
+  "projectVersion": "1.0.6783.30723",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

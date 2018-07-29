@@ -52,6 +52,8 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="MathCheck" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -60,21 +62,28 @@
     </Flowchart.Variables>
     <Flowchart.StartNode>
       <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
-        <ui:MessageBox Buttons="YesNo" Caption="Maths Question" ChosenButton="[answer]" DisplayName="Math Question" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Is 1+1 = 2?" TopMost="True" />
+        <ui:MessageBox Buttons="YesNo" Caption="Maths Question" ChosenButton="[answer]" DisplayName="Math Query" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Is 1+1 = 2?" TopMost="True" />
         <FlowStep.Next>
-          <FlowDecision x:Name="__ReferenceID1" Condition="[answer = Yes]" sap2010:WorkflowViewState.IdRef="FlowDecision_1" />
+          <FlowDecision x:Name="__ReferenceID1" Condition="[answer = &quot;Yes&quot;]" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+            <FlowDecision.True>
+              <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Correct" DisplayName="Message-Correct" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="You are a Math wizard!!" TopMost="True" />
+              </FlowStep>
+            </FlowDecision.True>
+            <FlowDecision.False>
+              <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Incorrect" DisplayName="Message-Incorrect" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="You have long way to go" TopMost="True" />
+              </FlowStep>
+            </FlowDecision.False>
+          </FlowDecision>
         </FlowStep.Next>
       </FlowStep>
     </Flowchart.StartNode>
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
-    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_3">
-      <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Correct" DisplayName="Message-Correct" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="You are a Math wizard!!" TopMost="True" />
-    </FlowStep>
-    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_4">
-      <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Incorrect" DisplayName="Message-Incorrect" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="Tou have long way to go" TopMost="True" />
-    </FlowStep>
-    <sads:DebugSymbol.Symbol>d0ZDOlxVc2Vyc1xWaXNoYWxcRG9jdW1lbnRzXFVpUGF0aFxVaVBhdGhTZWxmU3R1ZHlcVWlQYXRoXE1hdGhDaGVjay54YW1sBjkDTg8CAQE/CT/IAQIBA0E7QUsCAQI/MD9AAgEHP6kBP7YBAgEGP04/WAIBBA==</sads:DebugSymbol.Symbol>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <sads:DebugSymbol.Symbol>d0ZDOlxVc2Vyc1xWaXNoYWxcRG9jdW1lbnRzXFVpUGF0aFxVaVBhdGhTZWxmU3R1ZHlcVWlQYXRoXE1hdGhDaGVjay54YW1sDDwDWA8CAQFCCULFAQIBCkQ7RFcCAQhMEUzYAQIBBUcRR9QBAgECQjBCQAIBDkKmAUKzAQIBDUJOQlgCAQtMTUxYAgEHTK0BTMYBAgEGR01HVgIBBEepAUfCAQIBAw==</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -82,24 +91,6 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="70,87">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <av:Point x:Key="ShapeLocation">265,228.5</av:Point>
-            <av:Size x:Key="ShapeSize">70,87</av:Size>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowStep_2">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,51</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
@@ -113,7 +104,7 @@
       <sap2010:ViewStateData Id="FlowStep_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">40,284.02</av:Point>
+            <av:Point x:Key="ShapeLocation">40,314.5</av:Point>
             <av:Size x:Key="ShapeSize">200,51</av:Size>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -128,8 +119,28 @@
       <sap2010:ViewStateData Id="FlowStep_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">350,284.5</av:Point>
+            <av:Point x:Key="ShapeLocation">350,314.5</av:Point>
             <av:Size x:Key="ShapeSize">200,51</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="70,87">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">265,228.5</av:Point>
+            <av:Size x:Key="ShapeSize">70,87</av:Size>
+            <av:PointCollection x:Key="TrueConnector">265,272 140,272 140,314.5</av:PointCollection>
+            <av:PointCollection x:Key="FalseConnector">335,272 450,272 450,314.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,178.5 300,228.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>

@@ -63,7 +63,7 @@
     </Flowchart.Variables>
     <Flowchart.StartNode>
       <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_2">
-        <ui:MessageBox Buttons="YesNo" Caption="Maths Question" ChosenButton="[answer]" DisplayName="Math Query" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Is 1+1 = 2?" TopMost="True" />
+        <ui:MessageBox Buttons="YesNo" Caption="Maths Question" ChosenButton="[answer]" DisplayName="Mathematics Query" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="Is 1+1 = 2?" TopMost="True" />
         <FlowStep.Next>
           <FlowDecision x:Name="__ReferenceID2" Condition="[answer = &quot;Yes&quot;]" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
             <FlowDecision.True>
@@ -165,7 +165,7 @@
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
-    <sads:DebugSymbol.Symbol>d0ZDOlxVc2Vyc1xWaXNoYWxcRG9jdW1lbnRzXFVpUGF0aFxVaVBhdGhTZWxmU3R1ZHlcVWlQYXRoXE1hdGhDaGVjay54YW1sIzwDqQEPAgEBQglCxQECASFEO0RXAgEfdhF22AECARx5FZUBKgIBEmkZbS8CAQ9HEUfUAQIBDEoVZioCAQJCMEJAAgElQqYBQrMBAgEkQk5CWAIBInZNdlgCAR52rQF2xgECAR154wJ5rQMCARt5ywF57AECARp/G5IBJgIBE2usAWv2AQIBEWk+aUQCARBHTUdWAgEOR6kBR8IBAgENSuMCSq0DAgELSssBSuwBAgEKUBtjJgIBA4ABHZEBKAIBFFEdYigCAQSBAR+QATACARVSH2EwAgEFgQGvAoEB+QICARmHASWNATACARZSrwJS+QICAQlYJV4wAgEGiAEnjAE1AgEXWSddNQIBB4gBsQKIAbwCAgEYWbECWboCAgEI</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d0ZDOlxVc2Vyc1xWaXNoYWxcRG9jdW1lbnRzXFVpUGF0aFxVaVBhdGhTZWxmU3R1ZHlcVWlQYXRoXE1hdGhDaGVjay54YW1sIzwDqQEPAgEBQglCzAECASFEO0RXAgEfdhF22AECARx5FZUBKgIBEmkZbS8CAQ9HEUfUAQIBDEoVZioCAQJCMEJAAgElQq0BQroBAgEkQk5CWAIBInZNdlgCAR52rQF2xgECAR154wJ5rQMCARt5ywF57AECARp/G5IBJgIBE2usAWv2AQIBEWk+aUQCARBHTUdWAgEOR6kBR8IBAgENSuMCSq0DAgELSssBSuwBAgEKUBtjJgIBA4ABHZEBKAIBFFEdYigCAQSBAR+QATACARVSH2EwAgEFgQGvAoEB+QICARmHASWNATACARZSrwJS+QICAQlYJV4wAgEGiAEnjAE1AgEXWSddNQIBB4gBsQKIAbwCAgEYWbECWboCAgEI</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
